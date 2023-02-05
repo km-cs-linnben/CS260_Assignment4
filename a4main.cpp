@@ -11,8 +11,6 @@ a_list::a_list(int initialSize = 16) {
         list_itself[i] = 0;
     }
    endOfList = initialSize;
-   // what is happening line 7. why new and how does this work to make alist of this size****************************
-   //what is this whole paragraph. why is endoflist zero
 }
 
 bool a_list::add(int position, int value){
@@ -28,11 +26,25 @@ bool a_list::add(int position, int value){
     }
 
     list_itself[position-1] = value;
-    //endOfList++;
 
+    //cout<<"end of list"<<list_itself[endOfList]<<endl;
+    
+    endOfList++;    //Find out why if list[0] != 0 statement doesnt work*************************
+    list_itself[endOfList] = 0;
     return true;
 }
 
+int a_list::remove(int position){
+    int value_removed = list_itself[position];
+
+    for(int i = position; i < endOfList; ++i) {
+        list_itself[i-1] = list_itself[i];
+    }
+
+    endOfList--;
+
+    return value_removed;
+}
 
 
 
@@ -52,6 +64,11 @@ my_list.add(6, 6);
 my_list.add(2, 88);
 my_list.add(16, 77);
 my_list.add(16, 70);
+for(int i = 0; i< my_list.endOfList; i++){
+    cout << my_list.list_itself[i] <<endl;
+}
+
+my_list.remove(2);
 for(int i = 0; i< my_list.endOfList; i++){
     cout << my_list.list_itself[i] <<endl;
 }
