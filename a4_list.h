@@ -1,8 +1,8 @@
-class a_list {
+class A_list {
     public:
-        a_list(int initialSize);
+        A_list(int initialSize);    //must be same name as class name
         bool add(int position, int value);
-        bool remove(int position);
+        int remove(int position);
         int peek(int position);
         int *list_itself;
         int endOfList;
