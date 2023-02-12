@@ -21,3 +21,8 @@ Some print out tests to make sure everything is working:
 Lines 84-87
 Lines 94-97
 Lines 101-107
+
+
+EDIT for BigO Stuff:
+I believe all my functions would fall under BigO of 1 because none of them involve iterating along the list or inspecting any part
+of the list except for the specific position where the functions add, remove, or view a value.
